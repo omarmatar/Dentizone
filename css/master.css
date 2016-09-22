@@ -1,13 +1,12 @@
 *{
   box-sizing: border-box;
 }
-.carousel-indictors{
-}
 .navbar{
   background-color: #FAFAFA;
 }
 body{
   padding-top: 70px;
+
 }
 .navbar-brand img{
   width: 150px;
@@ -41,6 +40,23 @@ body{
 #sign-in-btn{
   text-align: center;
 }
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #337ab7;
+  border-radius: 10px;
+}
+.container-fluid.featured{
+background-color: #000
+}
 .product-box{
   border: 1px solid grey;
   overflow: auto;
@@ -58,7 +74,19 @@ width: 90%;
 
 }
 #carousel-item-img{
-
+  margin: auto;
+}
+.carousel-caption h2{
+  font-size: 20px
+}
+#my-slider img{
+  height: 250px
+}
+#my-slider .carousel-inner .item{
+  text-align: center;
+}
+#my-slider .carousel-indicators{
+  bottom: 10px
 }
 .carousel-indicators li {
   display: inline-block;
@@ -97,8 +125,9 @@ width: 90%;
   background-color: #fff;
 }
 /*this is for category carousel .catCar*/
-.catCar .row-fluid{
+.catCar .col-sm-12{
   text-align: center;
+  padding: 0
 }
 .carousel-control.catCar {
   position: absolute;
@@ -191,4 +220,18 @@ width: 90%;
   height: 12px;
   margin: 0;
   background-color: #fff;
+}
+/*cart*/
+.cart{
+
+}
+.cart.fixed-cart{
+  position: fixed;
+  top: 150px;
+  right: auto;
+}
+.footer{
+  background-color: #FAFAFA;
+  margin-top: 20px;
+  padding-top: 20px;
 }
