@@ -2,11 +2,12 @@
   box-sizing: content-box;
 }
 .carousel-indictors{
-
+}
+.navbar{
+  background-color: #FAFAFA;
 }
 body{
-  padding-top: 100px;
-  background-color: ;
+  padding-top: 70px;
 }
 .navbar-brand img{
   width: 150px;
@@ -41,15 +42,14 @@ body{
   text-align: center;
 }
 .product-box{
-  margin: 0;
-  border: 3px solid grey;
+  border: 1px solid grey;
   overflow: auto;
-  padding: 5%;
-  margin: 5%;
+  padding: 1%;
+  margin: 1%;
   display: inline-block;
-  width: 120px;
-
+  width: 100px;
 }
+
 .product-box img{
 width: 90%;
 }
@@ -93,13 +93,19 @@ width: 90%;
   opacity: 0.5;
   border-radius: 5px
 }
+.well.cat{
+  background-color: #fff;
+}
 /*this is for category carousel .catCar*/
-.carousel-control {
+.catCar .row-fluid{
+  text-align: center;
+}
+.carousel-control.catCar {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 15%;
+  width: 5%;
   font-size: 20px;
   color: #fff;
   text-align: center;
@@ -108,66 +114,56 @@ width: 90%;
   filter: alpha(opacity=50);
   opacity: .5;
 }
-.carousel-control.left {
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .0001)));
-  background-image:         linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .0001) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
-  background-repeat: repeat-x;
+.carousel-control.left.catCar {
+  right: auto;;
+  left: -20px;
 }
-.carousel-control.right {
-  right: 0;
+.carousel-control.right.catCar {
+  right: -20px;
   left: auto;
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  background-image:      -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
-  background-image:         linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .5) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
-  background-repeat: repeat-x;
 }
-.carousel-control:hover,
-.carousel-control:focus {
+.carousel-control.catCar:hover,
+.carousel-control.catCar:focus {
   color: #fff;
   text-decoration: none;
   filter: alpha(opacity=90);
   outline: 0;
   opacity: .9;
 }
-.carousel-control .icon-prev,
-.carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-left,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control.catCar .icon-prev,
+.carousel-control.catCar .icon-next,
+.carousel-control.catCar .glyphicon-chevron-left,
+.carousel-control.catCar .glyphicon-chevron-right {
   position: absolute;
   top: 50%;
   z-index: 5;
   display: inline-block;
   margin-top: -10px;
 }
-.carousel-control .icon-prev,
-.carousel-control .glyphicon-chevron-left {
+.carousel-control.catCar .icon-prev,
+.carousel-control.catCar .glyphicon-chevron-left {
   left: 50%;
   margin-left: -10px;
 }
-.carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-right {
+.carousel-control.catCar .icon-next,
+.carousel-control.catCar .glyphicon-chevron-right {
   right: 50%;
   margin-right: -10px;
 }
-.carousel-control .icon-prev,
-.carousel-control .icon-next {
+.carousel-control.catCar .icon-prev,
+.carousel-control.catCar .icon-next {
   width: 20px;
   height: 20px;
   font-family: serif;
   line-height: 1;
 }
-.carousel-control .icon-prev:before {
+.carousel-control.catCar .icon-prev:before {
   content: '\2039';
 }
-.carousel-control .icon-next:before {
+.carousel-control.catCar .icon-next:before {
   content: '\203a';
 }
-.carousel-indicators {
+.carousel-indicators.catCar {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -178,7 +174,7 @@ width: 90%;
   text-align: center;
   list-style: none;
 }
-.carousel-indicators li {
+.carousel-indicators.catCar li {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -190,7 +186,7 @@ width: 90%;
   border: 1px solid #fff;
   border-radius: 10px;
 }
-.carousel-indicators .active {
+.carousel-indicators.catCar .active {
   width: 12px;
   height: 12px;
   margin: 0;
