@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DentiZone</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" id="navbar-brand"href="#"><img src="dentizone_logo_new.png" alt="" /></a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Browse</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+              <div class="input-group">
+                <input type="text" class="form-control" id="search-fld" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" id="search-btn" type="button">Go!</button>
+                </span>
+              </div><!-- /input-group -->
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"class="glyphicon glyphicon-shopping-cart" id="navbar-cart-btn"><span class="badge">3</span></a></li>
+              <li><a href="#" id="sign-in-btn">Sign In</a></li>
+              <li><a href="#" class="sign-up-btn btn btn-default" id="sign-up-btn" >Sign Up</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div> <!-- header -->
+    <div class="container">
+      <div class="col-sm-8">
+        <div class="product-box product-details">
+          <img src="images/mouth_mirror-14475B6308159D4FADE.jpg" alt="" />
+          <h4>Dental Mirrors</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
+          <p class="box-price">15 EGP</p>
+          <a href="#addtocart" type="button" class="btn btn-primary">Add to cart</a>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="row cart">
+          <ul>
+            <li class="row list-inline columnCaptions">
+              <span>QTY</span>
+              <span>ITEM</span>
+              <span>Price</span>
+            </li>
+            <li class="row">
+              <span class="quantity">1</span>
+              <span class="itemName">Birthday Cake</span>
+              <span class="popbtn"><a class="arrow"></a></span>
+              <span class="price">$49.95</span>
+            </li>
+            <li class="row">
+              <span class="quantity">50</span>
+              <span class="itemName">Party Cups</span>
+              <span class="popbtn"><a class="arrow"></a></span>
+              <span class="price">$5.00</span>
+            </li>
+            <li class="row totals">
+            <span class="itemName">Total:</span>
+            <span class="price">$1694.43</span>
+            <span class="order"> <a class="text-center">ORDER</a></span>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4">Lorem ipsum dolor sit amet
+            <ul>
+              <li>consectetur adipisicing elit, sed do ebore et </li>
+              <li>conusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </li>
+              <li>consectetur adipisicing elit, sed do eiusmod temporre ets minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip reprehenderit</li>
+            </ul> </div>
+          <div class="col-sm-4">Lorem ipsum dolor sit amet
+            <ul>
+              <li>consectetur adipisicing elit, sed do ebore et </li>
+              <li>conusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </li>
+              <li>consectetur adipisicing elit, sed do eiusmod temporre ets minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip reprehenderit</li>
+            </ul> </div>
+          <div class="col-sm-4">Lorem ipsum dolor sit amet
+            <ul>
+              <li>consectetur adipisicing elit, sed do ebore et </li>
+              <li>conusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </li>
+              <li>consectetur adipisicing elit, sed do eiusmod temporre ets minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip reprehenderit</li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-md-12" style="text-align: center">
+              Copyright 2016. All Rights Reserved.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/productList.js"></script>
+    <script type="text/javascript">
+      $(window).on('scroll', function () {
+      ($(window).scrollTop() > 350) ? $('.cart').addClass('fixed-cart') : $('.cart').removeClass('fixed-cart');
+      });
+      var productFactory= function(id,category,name,description,price,image) {
+      }
+    </script>
+  </body>
+</html>

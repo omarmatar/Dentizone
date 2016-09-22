@@ -235,3 +235,9 @@ width: 90%;
   margin-top: 20px;
   padding-top: 20px;
 }
+/*product details page*/
+.product-box.product-details{
+  width: 90%;
+  margin: auto;
+  height: 500px
+}
