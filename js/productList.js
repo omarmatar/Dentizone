@@ -173,44 +173,165 @@ var insRestPrice=[
 var devRestPrice=[
 850,
 295,
+395,
+9,
+95
 ]
 var devRestName=[
 "LED Light Cure High Intensity - 1-year Guarantee",
 "Light Cure device",
+"Gutta Percha Cutter",
+"Carbide Burs",
+"Amalgam Polishing Kit"
 ]
 var devRestImage=[
 "images/lightcure.jpg",
 "images/lightcure2.jpg",
 "images/guttacut.jpg",
+"images/carbide.jpg",
+"images/amalgampol.jpg",
 ]
-var product_factory = function (name, id, category, image) {
-  var matRest =function () {
-    var i=0
-    for (i = 0; i < matRestName.length; i++) {
-      var product={};
-      product.name=matRestName[i];
-      product.price=matRestPrice[i];
-      product.image=matRestImage[i];
-      product.category="Restorative";
-      matProduct.push(product)
+// var product_factory = function (name, id, category, image) {
+//   var matRest =function () {
+//     var i=0
+//     for (i = 0; i < matRestName.length; i++) {
+//       var product={};
+//       product.name=matRestName[i];
+//       product.price=matRestPrice[i];
+//       product.image=matRestImage[i];
+//       product.category="Restorative";
+//       matProduct.push(product)
+//
+//     }
+//     return matProduct
+//   }
+//   matRest()
+//   return
+// }
+// var matRest =function () {
+//   var matProduct;
+//   for (var i = 0; i <matRestName.length; i++) {
+//     var product={};
+//     product.name=matRestName[i];
+//     product.price=matRestPrice[i];
+//     product.image=matRestImage[i];
+//     product.category="Restorative";
+//     // matProduct.push(product)
+//
+//   }
+//   return matProduct
+// }
+var cart=[]
+var allProducts=[]
+var product_factory=function (x) {
 
-    }
-    return matProduct
+  for (i = 0; i < devRestName.length; i++) {
+    var prod={}
+    prod.name=devRestName[i];
+    prod.price=devRestPrice[i];
+    prod.image=devRestImage[i];
+    prod.category="Restorative";
+    allProducts.push(prod)
   }
-  matRest()
-  return
-}
-var matRest =function () {
-  var matProduct;
-  for (var i = 0; i <matRestName.length; i++) {
-    var product={};
-    product.name=matRestName[i];
-    product.price=matRestPrice[i];
-    product.image=matRestImage[i];
-    product.category="Restorative";
-    matProduct.push(product)
 
-  }
-  return matProduct
+  var product={
+    id: x,
+    source: allProducts[x],
+    $cartItemEl: $('<li class="row cart-item">'),
+    $el: $('<div class="product-box">').appendTo($('.item .col-sm-12')),
+    initialize: function(x) {
+      this.$el.attr('id',x)
+      this.$cartItemEl.addClass("item_"+x)
+      this.id=x
+      var thisProduct=this
+      // thisProduct.source=thisProduct.source
+      // $.get(this.source, function(data) {
+      //   thisPost.source= data
+        thisProduct.render()
+      //
+      // })
+      allProducts.push(this)
+    },
+    render:function() {
+      var $imageEl = $('<img>').attr('src',this.source.image);
+      var $nameEl = $('<h4>').addClass('name').text(this.source.name);
+      var $priceEl = $('<div>').addClass('price').text(this.source.price+" EGP");
+      var $addToCartEl = $('<button type="button" class="btn btn-primary" id="addToCart">Add To Cart</button>');
+
+      $imageEl.click(this.productView.bind(this));
+      $nameEl.click(this.productView.bind(this));
+      $priceEl.click(this.productView.bind(this));
+      $addToCartEl.click(this.addToCart.bind(this))
+
+      this.$el.append([
+        $nameEl,
+        $imageEl,
+        $priceEl,
+        $addToCartEl,
+        // $('<input type="text" name="edit-post-title">').attr("value",this.source.title).attr("style","display: none").addClass("edit-title"),
+        // $('<input type="text" name="edit-post-body">').attr("value",this.source.body).attr("style","display: none").addClass("edit-post"),
+      ])
+    },
+    // highlight: function() {
+    //   // (this.active===true)? (this.active=false):(this.active=true);
+    //   this.active = !this.acitve;
+    //   this.$el.toggleClass("active");
+    // },
+    productView: function() {
+      $(".home-page").toggle();
+      $(".product-page").toggle();
+
+      var productDet = $('<div class="product-box">').append([$nameEl,
+        $imageEl,
+        $priceEl,
+        $addToCartEl]);
+      $(".product-details-container").append(productDet)
+    },
+    addToCart: function () {
+
+      var found=false
+      for (var i = 0; i < cart.length; i++) {
+
+        if (cart[i]===this.source){
+        console.log("fpond");
+        found=true;
+        var q= this.$cartItemEl.find('.qty').text()
+        $("li.item_"+this.id).find(".qty").text(parseInt(q)+1)
+        }
+
+      }
+      if (!found){
+        cart.push(this.source);
+        var cartAdd=[
+          $('<span>').addClass('qty').text("1"),
+          $('<span>').addClass('name').text(this.source.name),
+          $('<span>').addClass('price').text(this.source.price+" EGP"),
+
+        ]
+
+        this.$cartItemEl.html(cartAdd)
+        $(".cart ul.main").append(this.$cartItemEl)//.appendTo()
+      }
+
+    },
+    // saveEdit: function() {
+    //   this.$el.find(".title").toggle();
+    //   this.$el.find(".body").toggle();
+    //   this.$el.find(".edit-post").toggle();
+    //   this.$el.find(".edit-title").toggle();
+    //   var titleEditVal = this.$el.find(".edit-title").val();
+    //   var bodyEditVal = this.$el.find(".edit-post").val();
+    //   this.$el.find(".title").text(titleEditVal);
+    //   this.$el.find(".body").text(bodyEditVal);
+    //
+    //
+    // },
+
+  };
+  product.initialize(x)
 }
-matRest()
+$('.item .col-sm-12').html("")
+for (var id = 0; id <=4; id++) {
+product_factory(id);
+
+}

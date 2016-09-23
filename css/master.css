@@ -64,6 +64,7 @@ background-color: #000
   margin: 1%;
   display: inline-block;
   width: 100px;
+  height: 250px
 }
 
 .product-box img{
@@ -240,4 +241,11 @@ width: 90%;
   width: 90%;
   margin: auto;
   height: 500px
+}
+#addToCart{
+  font-size: 10px;
+
+  margin: 0;
+
+
 }
